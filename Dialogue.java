@@ -90,6 +90,24 @@ public class Dialogue
 		return text;
 	}
 	
+	public static String print(String text)
+	{
+		System.out.print("\n");
+		for(int i = 0; i < text.length(); i++)
+		{
+			System.out.print(text.charAt(i));
+			try
+			{
+				Thread.sleep(15);
+			}
+			catch(InterruptedException ex)
+			{
+				Thread.currentThread().interrupt();
+			}
+		}
+		return text;
+	}
+	
 	public String toString()
 	{
 		return text.toString();

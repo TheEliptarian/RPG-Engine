@@ -112,7 +112,7 @@ public class Character
 	{
 		ArrayList<Dialogue> d = new ArrayList<Dialogue>();
 		Character test = new Character("Mayor Jones", d);
-		test.addDialogue(new Dialogue("Hey, traveler! Some ducc monsters have been terrorizing our village for far too long! Kill them pl0x thnx.", new Quest("Kill the Duccs!", null, test, "Do you accept this quest?")));
+		//test.addDialogue(new Dialogue("Hey, traveler! Some ducc monsters have been terrorizing our village for far too long! Kill them pl0x thnx.", new Quest("Kill the Duccs!", null, test, "Do you accept this quest?")));
 		test.say(0);
 	}
 }

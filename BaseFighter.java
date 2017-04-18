@@ -82,5 +82,6 @@ public class BaseFighter extends Character
 	public void attack(BaseFighter target)
 	{
 		if((int)(Math.random() * 100) > target.eva - weapon.hit) return;
+		
 	}
 }

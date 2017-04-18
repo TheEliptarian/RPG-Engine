@@ -2,6 +2,7 @@ public class Weapon extends Item
 {
 	int pwr, eva, hit; // PWR - Power, EVA - Evasion, HIT - Hit Value.
 	double dur; //DUR - Durability.
+	boolean breakable = false;
 	
 	/*
 	 * PWR - The base strength of a weapon.

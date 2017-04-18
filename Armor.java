@@ -8,8 +8,9 @@ public class Armor extends Item
 	 * A class for basic armor.
 	 */ 
 	 
-	 int def;
-	 double dur;
+	 int def; //DEF - Defense Value
+	 double dur; //DUR - Durability
+	 boolean breakable = false;
 	 
 	 public Armor(String n)
 	 {
@@ -26,6 +27,13 @@ public class Armor extends Item
 		  super(n);
 		  def = de;
 		  dur = (double)du;
+	 }
+	 
+	 public Armor(String n, String d, int de, boolean b)
+	 {
+		  super(n, d);
+		  def = de;
+		  breakable = b;
 	 }
 	 
 	 public Armor(String n, String d, int de, int du)
@@ -111,6 +119,11 @@ class ArmorSet extends Item
 	Chest chest;
 	Legs legs;
 	Boots boots;	
+	
+	public ArmorSet()
+	{
+		super("","");
+	}
 	
 	public ArmorSet(String n, String d)
 	{

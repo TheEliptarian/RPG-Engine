@@ -144,7 +144,7 @@ class ArmorSet extends Item
 	public void remove(Armor a)
 	{
 		if(a instanceof Helm) helm = null;
-		if(a instanceof Chest) chest = (null;
+		if(a instanceof Chest) chest = null;
 		if(a instanceof Legs) legs = null;
 		if(a instanceof Boots) boots = null;
 	}

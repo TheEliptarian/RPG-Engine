@@ -84,7 +84,11 @@ public class Dialogue
 					Thread.currentThread().interrupt();
 				}
 			}
-			if(text.size() > 2)Engine.input.nextLine();
+			if(text.size() > 2)
+			{
+				System.out.print(">>");
+				Engine.input.nextLine();
+			}
 		}
 		if(quest != null) quest.prompt();
 		return text;

@@ -126,6 +126,16 @@ class ArmorSet extends Item
 		boots = b;
 	}
 	
+	//Remove select peices of armor from a set.
+	//WIP
+	public void remove(Armor a)
+	{
+		if(a instanceof Helm) helm = null;
+		if(a instanceof Chest) chest = (null;
+		if(a instanceof Legs) legs = null;
+		if(a instanceof Boots) boots = null;
+	}
+	
 	public void set(Armor a)
 	{
 		if(a instanceof Helm) helm = (Helm)a;

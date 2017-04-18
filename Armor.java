@@ -6,7 +6,6 @@ public class Armor extends Item
 {
 	/*
 	 * A class for basic armor.
-	 * Class is currently meaningless.
 	 */ 
 	 
 	 int def;

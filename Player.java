@@ -14,6 +14,8 @@ public class Player extends BaseFighter
 		armor.set(Generic.genericChest);
 		armor.set(Generic.genericLegs);
 		armor.set(Generic.genericBoots);
+		arms[0] = Generic.genericAxe;
+		equip(Generic.genericAxe);
 	}
 	
 	/**
@@ -34,5 +36,25 @@ public class Player extends BaseFighter
 			}
 		}
 		return false;
+	}
+	
+	/**
+	 * Prints the armory of the player, including names and descriptions
+	 * of the currently equipped armor and weapons.
+	 */ 
+	public void printArmory()
+	{
+		Dialogue.print("Weapon - " + weapon.name + " - " + weapon.desc + 
+					 "\n\nHelm - " + armor.helm.name + " - " + armor.helm.desc + 
+					 "\n\nChest - " + armor.chest.name + " - " + armor.chest.desc + 
+					 "\n\nLeggings - " + armor.legs.name + " - " + armor.legs.desc + 
+					 "\n\nBoots - " + armor.boots.name + " - " + armor.boots.desc + 
+					 "\n");
+	}
+	public static void main(String[] args)
+	{
+		Player player = new Player("Bob", 0, 0, 0, 0);
+		player.armor = Instances.bronzeSet;
+		player.printArmory();
 	}
 }

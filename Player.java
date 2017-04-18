@@ -32,9 +32,26 @@ public class Player extends BaseFighter
 			if(inv[i] == a)
 			{
 				armor.set(a);
+				inv[i] = null;
 				return true;
 			}
 		}
+		return false;
+	}
+	
+	/**
+	 * Removes an armor from the active slot. 
+	 * 
+	 * @param a - The armor piece to be removed.
+	 * @return true if the a is in the inventory of the Player and
+	 * could be removed.
+	 */
+	public boolean removeA(Armor a)
+	{
+		if(a == armor.helm) armor.remove(a);return true;
+		if(a == armor.chest) armor.remove(a);return true;
+		if(a == armor.legs) armor.remove(a);return true;
+		if(a == armor.boots) armor.remove(a);return true;
 		return false;
 	}
 	

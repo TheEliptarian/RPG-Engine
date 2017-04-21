@@ -9,7 +9,8 @@ javac Engine.java
 javac Dialogue.java
 javac Character.java
 javac Quest.java
+javac Instances.java
 javac Player.java
 javac Dialogue.java
-echo Compiling Complete
-echo on
+echo Compiling Complete.
+pause

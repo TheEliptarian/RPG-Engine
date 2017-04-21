@@ -46,6 +46,7 @@ public class Player extends BaseFighter
 	 * @return true if the a is in the inventory of the Player and
 	 * could be removed.
 	 */
+	 /*
 	public boolean removeA(Armor a)
 	{
 		if(a == armor.helm) armor.remove(a);return true;
@@ -53,7 +54,7 @@ public class Player extends BaseFighter
 		if(a == armor.legs) armor.remove(a);return true;
 		if(a == armor.boots) armor.remove(a);return true;
 		return false;
-	}
+	}*/
 	
 	/**
 	 * Prints the armory of the player, including names and descriptions

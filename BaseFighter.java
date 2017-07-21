@@ -9,8 +9,10 @@ public class BaseFighter extends Character
 	int hp;
 	int str, def, crt; /*Physical attack related skills. STR - Strength,
 	DEF - Defense, CRT - Crit Chance.*/
-	int spd, eva, dg; /*Dexterity related skills. SPD - Speed, EVA - 
-	Evasion, DG - Dodge.*/
+	int spd, eva, dge; /*Dexterity related skills. SPD - Speed, EVA - 
+	Evasion, DGE - Dodge.*/
+	int mag, con; /*Magic related skills. MAG - Magic Ability, CON -
+	Constituion (Magic Defense)*/
 	
 	/*
 	 * STR is the base strength of a character. Directly affects the 
@@ -36,7 +38,7 @@ public class BaseFighter extends Character
 		spd = 0;
 		crt = 0;
 		eva = 0;
-		dg = 0;
+		dge = 0;
 	}
 	
 	/**

@@ -55,6 +55,7 @@ public class Character
 	public Character(String n)
 	{
 		name = n;
+		silent = true;
 		dialogue = null;
 	}
 	
@@ -68,6 +69,7 @@ public class Character
 	{
 		if(silent)
 		{
+			dialogue = new ArrayList<Dialogue>();
 			 dialogue.clear();
 			 silent = false;
 		}
@@ -99,20 +101,15 @@ public class Character
 	 */ 
 	public void say(int index)
 	{
-		try
-		{
-			Runtime.getRuntime().exec("cls");
-		}
-		catch(Exception e){}
+		Engine.cls();
 		System.out.println(name + ": ");
 		dialogue.get(index).print();
 	}
 	
 	public static void main(String[] args)
 	{
-		ArrayList<Dialogue> d = new ArrayList<Dialogue>();
-		Character test = new Character("Mayor Jones", d);
-		//test.addDialogue(new Dialogue("Hey, traveler! Some ducc monsters have been terrorizing our village for far too long! Kill them pl0x thnx.", new Quest("Kill the Duccs!", null, test, "Do you accept this quest?")));
+		Character test = new Character("Mayor Jones");
+		test.addDialogue(new Dialogue("Hey, traveler! Some monsters have been terrorizing our village for far too long! Kill them please thanks.", new Quest("Kill the Monsters!", null, test, "Do you accept this quest?")));
 		test.say(0);
 	}
 }

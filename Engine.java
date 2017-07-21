@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.io.IOException;
 public class Engine
 {
 	/*
@@ -21,6 +22,7 @@ public class Engine
 				 }
 				 System.out.println("\n");
 			}
+			System.out.print(">> ");
 			String in = input.nextLine();
 			if(redo)System.out.println();
 			in = in.toLowerCase();
@@ -36,4 +38,14 @@ public class Engine
 		}
 		return null;
 	 }
+	 
+	public static void cls()
+	{
+		try
+		{
+			if(System.getProperty("os.name").contains("Windows")) new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
+			else Runtime.getRuntime().exec("clear");
+		}
+		catch(IOException | InterruptedException ex) {}
+	}
 }

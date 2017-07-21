@@ -96,19 +96,67 @@ public class Dialogue
 	
 	public static String print(String text)
 	{
-		System.out.print("\n");
+		System.out.println();
 		for(int i = 0; i < text.length(); i++)
 		{
 			System.out.print(text.charAt(i));
 			try
 			{
-				Thread.sleep(15);
+				if(text.charAt(i) == '.' && text.charAt(i + 1) == '.')
+				{
+					try
+					{
+						Thread.sleep(200);
+					}	
+					catch(InterruptedException ex)
+					{
+						Thread.currentThread().interrupt();
+					}
+				}
+				else
+				{
+					try
+					{
+						Thread.sleep(15);
+					}	
+					catch(InterruptedException ex)
+					{
+						Thread.currentThread().interrupt();
+					}
+				}
+			}
+			catch(Exception e)
+			{
+					try
+					{
+						Thread.sleep(15);
+					}	
+					catch(InterruptedException ex)
+					{
+						Thread.currentThread().interrupt();
+					}
+			}
+		}
+		System.out.println();
+		return text;
+	}
+	
+	public static String slowPrint(String text)
+	{
+		System.out.println();
+		for(int i = 0; i < text.length(); i++)
+		{
+			System.out.print(text.charAt(i));
+			try
+			{
+				Thread.sleep(100);
 			}
 			catch(InterruptedException ex)
 			{
 				Thread.currentThread().interrupt();
 			}
 		}
+		System.out.println();
 		return text;
 	}
 	

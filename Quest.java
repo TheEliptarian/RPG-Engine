@@ -49,7 +49,7 @@ public class Quest
 		 }
 		 else if(input.equals("no"))
 		 {
-			 
+			 System.out.println("This Quest will remain at this location until you come for it...");
 		 }
 	 }
 }

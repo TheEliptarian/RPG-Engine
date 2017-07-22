@@ -1,7 +1,6 @@
 echo off
 
 echo Compiling files...
-
 javac Item.java 
 javac Weapon.java 
 

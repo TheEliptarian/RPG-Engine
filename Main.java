@@ -32,6 +32,7 @@ public class Main
 	private static final String CODIFICACION = "UTF-8";
 	private static String key = "605bd70efed2c6374823b54bbc560b58";
 	public static String name = "";
+	public static int[] stat = new int[11]; //For testing, refactor later.
 
 	
 	public static void newGame()
@@ -76,10 +77,20 @@ public class Main
 				ArrayList<String> data = new ArrayList<String>();
 				while (s.hasNext())
 				{
-					data.add(decrypt(s.next(),key));
+					String entry = decrypt(s.next(),key);
+					data.add(entry);
 				}
 				s.close();
 				name = data.get(0);
+				stat[0] = Integer.parseInt(data.get(1));
+				stat[1] = Integer.parseInt(data.get(2));
+				stat[2] = Integer.parseInt(data.get(3));
+				stat[3] = Integer.parseInt(data.get(4));
+				stat[4] = Integer.parseInt(data.get(5));
+				stat[5] = Integer.parseInt(data.get(6));
+				stat[6] = Integer.parseInt(data.get(7));
+				stat[7] = Integer.parseInt(data.get(8));
+				stat[8] = Integer.parseInt(data.get(9));
 			}
 			catch(Exception e){}
 		}
@@ -94,9 +105,22 @@ public class Main
 	{
 		try
 		{
-			String data = encrypt(name, key);
+			ArrayList<String> data = new ArrayList<String>();
+			data.add(name);
+			data.add(Integer.toString(player.hp));
+			data.add(Integer.toString(player.str));
+			data.add(Integer.toString(player.def));
+			data.add(Integer.toString(player.spd));
+			data.add(Integer.toString(player.eva));
+			data.add(Integer.toString(player.dge));
+			data.add(Integer.toString(player.crt));
+			data.add(Integer.toString(player.mag));
+			data.add(Integer.toString(player.con));
 			PrintWriter writer = new PrintWriter(dir + "\\save.rpg", "UTF-8");
-			writer.println(data);
+			for(String entry : data)
+			{
+				writer.println(encrypt(entry,key));
+			}
 			writer.close();
 		} catch (Exception e) 
 		{

@@ -20,6 +20,7 @@ javac Instances.java
 
 javac Player.java 
 javac Dialogue.java 
+javac Main.java 
 echo Compiling Complete.
 
 pause

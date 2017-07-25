@@ -32,7 +32,7 @@ public class Main
 	private static final String CODIFICACION = "UTF-8";
 	private static String key = "605bd70efed2c6374823b54bbc560b58";
 	public static String name = "";
-	public static int[] stat = new int[11]; //For testing, refactor later.
+	public static int[] stat = new int[9]; //For testing, refactor later.
 
 	
 	public static void newGame()
@@ -41,7 +41,16 @@ public class Main
 		print("Enter your name: ");
 		System.out.print(">> ");
 		name = Engine.input.nextLine();
-		game();
+		Engine.cls();
+		print("Welcome, " + name + ". Please choose a class. 1 for Light Mage, 2 for Dark Mage, 3 for Swordsman, 4 for Knight.");
+		String classn = Engine.getInput("1", "2", "3", "4");
+		Class c = (classn.equals("1") ? Instances.lightMage : classn.equals("2") ? Instances.darkMage : classn.equals("3") ? Instances.swordsman : Instances.knight);
+		Engine.cls();
+		print("Rolling stats...");
+		int[] s = Player.rollStats(c);
+		player = new Player(name, c, s);
+		player.printArmory();
+		saveFile();
 	}
 	
 	public static void loadFile()
@@ -168,9 +177,8 @@ public class Main
 		String classn = Engine.getInput("1", "2", "3", "4");
 		Class c = (classn.equals("1") ? Instances.lightMage : classn.equals("2") ? Instances.darkMage : classn.equals("3") ? Instances.swordsman : Instances.knight);
 		Engine.cls();
-		print("Rolling stats...");
 		int[] s = Player.rollStats(c);
-		player = new Player(name, c, s);
+		player = new Player(name, c, stat);
 		player.printArmory();
 		saveFile();
 	}

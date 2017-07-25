@@ -10,4 +10,9 @@ public class Class
 		growths = g;
 		max = m;
 	}
+	
+	public String toString()
+	{
+		return name;
+	}
 }

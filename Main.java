@@ -32,6 +32,7 @@ public class Main
 	private static final String CODIFICACION = "UTF-8";
 	private static String key = "605bd70efed2c6374823b54bbc560b58";
 	public static String name = "";
+	public static Class sClass;
 	public static int[] stat = new int[9]; //For testing, refactor later.
 
 	
@@ -100,6 +101,10 @@ public class Main
 				stat[6] = Integer.parseInt(data.get(7));
 				stat[7] = Integer.parseInt(data.get(8));
 				stat[8] = Integer.parseInt(data.get(9));
+				
+				//Reading in class
+				String classn = data.get(10);
+				sClass = (classn.equals("Light Mage") ? Instances.lightMage : classn.equals("Dark Mage") ? Instances.darkMage : classn.equals("Swordsman") ? Instances.swordsman : Instances.knight);
 			}
 			catch(Exception e){}
 		}
@@ -125,6 +130,7 @@ public class Main
 			data.add(Integer.toString(player.crt));
 			data.add(Integer.toString(player.mag));
 			data.add(Integer.toString(player.con));
+			data.add(player.c.toString());
 			PrintWriter writer = new PrintWriter(dir + "\\save.rpg", "UTF-8");
 			for(String entry : data)
 			{
@@ -173,12 +179,8 @@ public class Main
 	public static void game()
 	{
 		Engine.cls();
-		print("Welcome, " + name + ". Please choose a class. 1 for Light Mage, 2 for Dark Mage, 3 for Swordsman, 4 for Knight.");
-		String classn = Engine.getInput("1", "2", "3", "4");
-		Class c = (classn.equals("1") ? Instances.lightMage : classn.equals("2") ? Instances.darkMage : classn.equals("3") ? Instances.swordsman : Instances.knight);
-		Engine.cls();
-		int[] s = Player.rollStats(c);
-		player = new Player(name, c, stat);
+		print("Welcome, " + name + ".");
+		player = new Player(name, sClass, stat);
 		player.printArmory();
 		saveFile();
 	}
